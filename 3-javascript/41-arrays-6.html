@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="button" value="Hesapla" onclick="clickHesapla()">
+
+
+    <script>
+        
+
+        function clickHesapla(){
+            const dizi = [1,4,65,23,56,121,45,11,45,7,87];
+            const ort = getAverage(dizi); // ortalama veren fonksiyonu  "ort" olarak tanımladık
+            const count = getCount(dizi, ort); //dizi'yi ve ort'u getCount'a parametre olarak atadık
+            alert(`Dizinin içinde oratala değer olan ${ort} dan küçük olan ${count} adet eleman var`);
+
+        }
+       
+
+        function getAverage(arr){  //jenerik fokfiyon. 19. satırda tanımlanan degeri alır
+            let avg = 0;
+            for(let i=0; i<arr.length; i++){
+                avg += arr[i];
+            }
+            avg = (avg / arr.length).toFixed(2);
+            return avg; //fonksiyon avarage döndürür.
+        }
+
+        function getCount(arr, ref){ //jenerik fokfiyonda genel değişken isimlerigirilir. 20. satırda tanımlanan degeri alır
+            let count = 0;
+            for(let i=0; i<arr.length; i++){
+                if(arr[i]<ref) {
+                    count++;
+                }
+            }
+            return count;
+        }
+ 
+
+
+
+    </script>
+</body>
+</html>
